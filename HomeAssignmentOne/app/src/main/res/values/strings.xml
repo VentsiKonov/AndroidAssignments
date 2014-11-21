@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Meal Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="euro">EUR</string>
+    <string name="bgn">BGN</string>
+    <string name="dollar">$</string>
+    <string name="lblDish">Dish</string>
+    <string name="lblDessert">Dessert</string>
+    <string name="lblDrink">Drink</string>
+    <string name="dash">-</string>
+    <string name="plus">+</string>
+    <string name="lblHomeDelivery">Home Delivery:</string>
+    <string name="lblCalculate">Calculate!</string>
+    <string name="lblTotalPrice">Total Price:</string>
+    <string name="lblAboutUs">About Us</string>
+    <string name="priceFormat">%1$s%2$.2f %3$s</string>
+    <string name="title_activity_about_us">About Us</string>
+    <string name="aboutus_lblName">Name:</string>
+    <string name="aboutus_lblMail">E-mail:</string>
+    <string name="aboutus_lblPhone">Phone:</string>
+    <string name="aboutus_name">Венцислав Конов</string>
+    <string name="aboutus_mail">ventsi.konov@gmail.com</string>
+    <string name="aboutus_phone">0894 62 92 98</string>
+    <string name="aboutus_lblBack">Go Back</string>
+
+    <integer name="dishPriceEUR">5</integer>
+    <integer name="dessertPriceEUR">2</integer>
+    <integer name="drinkPricePerLiterEUR">1</integer>
+    <integer name="homeDeliveryPrice">10</integer>
+
+    <fraction name="eurDollarER">125%</fraction>
+    <fraction name="eurBgnER">196%</fraction>
+
+
+</resources>

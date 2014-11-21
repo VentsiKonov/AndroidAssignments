@@ -1,0 +1,239 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MealCalculator">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/euro"
+        android:id="@+id/btnEuro"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dollar"
+        android:id="@+id/btnDollar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bgn"
+        android:id="@+id/btnBGN"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/lblDish"
+        android:id="@+id/lblDish"
+        android:layout_below="@+id/btnEuro"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="45dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/dash"
+        android:id="@+id/dashDish"
+        android:layout_toEndOf="@+id/lblDish"
+        android:layout_marginStart="@dimen/dash_margins"
+        android:layout_marginEnd="@dimen/dash_margins"
+        android:layout_alignBaseline="@+id/lblDish"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@integer/dishPriceEUR"
+        android:id="@+id/dishPrice"
+        android:layout_alignBaseline="@+id/lblDish"
+        android:layout_toEndOf="@+id/dashDish" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:minEms="2"
+        android:id="@+id/dishQuantity"
+        android:layout_alignBaseline="@+id/lblDish"
+        android:layout_centerHorizontal="true"
+        android:text="1"
+        android:digits="" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        android:id="@+id/dishPlus"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@id/lblDish"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dash"
+        android:id="@+id/dishMinus"
+        android:layout_alignBaseline="@id/lblDish"
+        android:layout_toStartOf="@id/dishPlus"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/lblDessert"
+        android:id="@+id/lblDessert"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/lblDish"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:minEms="2"
+        android:digits=""
+        android:id="@+id/dessertQuantity"
+        android:layout_alignBaseline="@+id/lblDessert"
+        android:layout_centerHorizontal="true"
+        android:text = "1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        android:id="@+id/dessertPlus"
+        android:layout_alignBaseline="@+id/lblDessert"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dash"
+        android:id="@+id/dessertMinus"
+        android:layout_alignBaseline="@+id/lblDessert"
+        android:layout_toStartOf="@id/dessertPlus" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/lblDrink"
+        android:id="@+id/lblDrink"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/lblDessert"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/drinkQuantity"
+        android:layout_alignTop="@+id/lblDrink"
+        android:layout_alignParentEnd="true"
+        android:indeterminate="false"
+        android:max="30"
+        android:progress="5"
+        android:layout_alignStart="@+id/btnDollar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/dash"
+        android:id="@+id/dashDessert"
+        android:layout_toEndOf="@+id/lblDessert"
+        android:layout_marginStart="@dimen/dash_margins"
+        android:layout_marginEnd="@dimen/dash_margins"
+        android:layout_alignBaseline="@+id/lblDessert"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@integer/dessertPriceEUR"
+        android:id="@+id/dessertPrice"
+        android:layout_alignBaseline="@+id/lblDessert"
+        android:layout_toEndOf="@+id/dashDessert" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/dash"
+        android:id="@+id/dashDrink"
+        android:layout_toEndOf="@+id/lblDrink"
+        android:layout_marginStart="@dimen/dash_margins"
+        android:layout_marginEnd="@dimen/dash_margins"
+        android:layout_alignBaseline="@+id/lblDrink"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@integer/drinkPricePerLiterEUR"
+        android:id="@+id/drinkPrice"
+        android:layout_alignBaseline="@+id/lblDrink"
+        android:layout_toEndOf="@+id/dashDrink" />
+
+    <CheckBox
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblHomeDelivery"
+        android:id="@+id/homeDelivery"
+        android:layout_below="@+id/lblDrink"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="75dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblCalculate"
+        android:id="@+id/btnCalculate"
+        android:layout_alignTop="@+id/homeDelivery"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/lblTotalPrice"
+        android:id="@+id/lblTotalPrice"
+        android:layout_below="@+id/btnCalculate"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/totalPrice"
+        android:layout_alignBaseline="@+id/lblTotalPrice"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lblAboutUs"
+        android:id="@+id/btnAboutUs"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
