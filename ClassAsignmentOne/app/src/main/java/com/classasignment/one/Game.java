@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,38 +15,56 @@ import java.util.Random;
 
 
 public class Game extends Activity {
-    String[] symbols;
-    String state_2;
-    String state_1;
+    int[] matrix;
+    int size;
+    TileAdapter adapter;
+    GridView grid;
+    TextView hit_count;
+    static Random rand = new Random();
 
     private boolean checkWin(){
-        for (int i = 1; i < symbols.length; i++){
-            if(!symbols[i].equals(symbols[0]))
+        for (int i = 1; i < matrix.length; i++){
+            if(matrix[0] == matrix[i])
                 return false;
         }
         return true;
     }
 
     private void flip(int position){
-        symbols[position] = symbols[position].equals(state_1) ? state_2 : state_1;
+        matrix[position] = matrix[position] == 0 ? 1 : 0;
     }
 
     private void flipNeighbours(int position){
-        if (position % 5 != 0) {
+        if (position % size != 0) {
             flip(position - 1);
         }
 
-        if (position > 4) {
-            flip(position - 5);
+        if (position > (size - 1)) {
+            flip(position - size);
         }
 
-        if (position < 20) {
-            flip(position + 5);
+        if (position < size*size - size) {
+            flip(position + size);
         }
 
-        if ((position + 1) % 5 != 0) {
+        if ((position + 1) % size != 0) {
             flip(position + 1);
         }
+    }
+
+    private void init(){
+        matrix = new int[size*size];
+        for (int i = 0; i < matrix.length; i++){
+            matrix[i] = rand.nextBoolean() ? 1 : 0;
+        }
+    }
+
+    private void reset(){
+        init();
+        adapter.reinit(matrix);
+        grid.setNumColumns(size);
+        grid.invalidateViews();
+        hit_count.setText("0");
     }
 
     @Override
@@ -53,16 +72,13 @@ public class Game extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        GridView grid = (GridView) findViewById(R.id.gridView);
-        final TextView hit_count = (TextView) findViewById(R.id.hit_count);
-        symbols = new String[25];
-        state_1 = getResources().getString(R.string.state_1);
-        state_2 = getResources().getString(R.string.state_2);
-        Random rand = new Random();
-        for (int i = 0; i < symbols.length; i++){
-            symbols[i] = rand.nextBoolean() ? state_2 : state_1;
-        }
-        final TileAdapter adapter = new TileAdapter(this, symbols);
+        grid = (GridView) findViewById(R.id.gridView);
+        hit_count = (TextView) findViewById(R.id.hit_count);
+        size = getResources().getInteger(R.integer.size);
+
+        init();
+
+        adapter = new TileAdapter(this, matrix);
         grid.setAdapter(adapter);
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -77,8 +93,15 @@ public class Game extends Activity {
                 if (checkWin()) {
                     Toast toast = Toast.makeText(Game.this, "You win!", Toast.LENGTH_LONG);
                     toast.show();
-                    finish();
                 }
+            }
+        });
+
+        Button reset = (Button) findViewById(R.id.reset);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
             }
         });
 
@@ -99,10 +122,26 @@ public class Game extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.size_5:
+                size = 5;
+                break;
+            case R.id.size_6:
+                size = 6;
+                break;
+            case R.id.size_7:
+                size = 7;
+                break;
+            case R.id.size_8:
+                size = 8;
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
-        return super.onOptionsItemSelected(item);
+        reset();
+
+        return true;
+
     }
 }

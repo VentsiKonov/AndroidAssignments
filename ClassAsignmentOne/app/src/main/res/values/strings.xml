@@ -12,7 +12,7 @@
     <string name="title_activity_game">Game</string>
     <string name="hello_world">Hello world!</string>
     <string name="game_btn">Game</string>
-    <string name="state_1">X</string>
-    <string name="state_2">O</string>
+
+    <integer name="size">5</integer>
 
 </resources>

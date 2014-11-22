@@ -2,6 +2,7 @@ package com.classasignment.one;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,27 +10,23 @@ import android.widget.TextView;
 
 public class TileAdapter extends BaseAdapter {
     Context mContext;
-    String[] mStrings;
-    int mState1, mState2;
-    String mState1Symbol;
+    int[] mMatrix;
+    int mState1;
 
-    TileAdapter(Context context, String[] strings){
+    TileAdapter(Context context, int[] matrix){
         mContext = context;
-        mStrings = strings;
-        mState1 = Color.RED;
-        mState2 = Color.GREEN;
-        mState1Symbol = "X";
-
+        mMatrix = matrix;
+        mState1 = 1;
     }
 
     @Override
     public int getCount() {
-        return mStrings.length;
+        return mMatrix.length;
     }
 
     @Override
-    public String getItem(int position) {
-        return mStrings[position];
+    public Integer getItem(int position) {
+        return mMatrix[position];
     }
 
     @Override
@@ -38,19 +35,23 @@ public class TileAdapter extends BaseAdapter {
     }
 
     @Override
-    public TextView getView(int position, View convertView, ViewGroup parent) {
-        TextView t;
-        if(convertView == null){
-            t = new TextView(mContext);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View v;
+        if(convertView == null) {
+            v = LayoutInflater.from(mContext).inflate(R.layout.tile, parent, false);
         }
         else{
-            t = (TextView) convertView;
+            v = convertView;
         }
-        t.setHeight(100);
-        t.setWidth(100);
 
-        t.setBackgroundColor(mStrings[position].equals(mState1Symbol) ? mState1 : mState2);
+        TextView block = (TextView) v.findViewById(R.id.tv);
+        block.setBackgroundColor(mMatrix[position] == mState1 ? Color.RED : Color.GREEN);
 
-        return t;
+        return v;
+    }
+
+
+    public void reinit(int[] matrix){
+        mMatrix = matrix;
     }
 }
