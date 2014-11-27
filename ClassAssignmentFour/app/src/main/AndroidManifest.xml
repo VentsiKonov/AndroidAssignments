@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="me.vkonov.classassignmentfour.HelloWorld"
-            android:label="@string/title_activity_hello_world" >
+            android:name="me.vkonov.classassignmentfour.RegisterActivity"
+            android:label="@string/title_activity_register" >
         </activity>
     </application>
 

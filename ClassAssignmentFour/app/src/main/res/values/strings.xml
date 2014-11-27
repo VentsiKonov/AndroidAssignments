@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ClassAssignmentFour</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Log In System</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_hello_world">HelloWorld</string>
+    <string name="lblPassword">Password:</string>
+    <string name="lblEmail">E-mail:</string>
+    <string name="lblRegister">Register</string>
+    <string name="lblLogin">Login</string>
+    <string name="lblLoggedIn">You are now logged in!</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="lblName">Name:</string>
+    <string name="lblPhone">Phone:</string>
+    <string name="lblLogout">Log out</string>
+    <string name="lblAdminGreeting">Hello Admin</string>
 
 </resources>
