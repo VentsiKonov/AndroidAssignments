@@ -24,7 +24,7 @@ public class Game extends Activity {
 
     private boolean checkWin(){
         for (int i = 1; i < matrix.length; i++){
-            if(matrix[0] == matrix[i])
+            if(matrix[0] != matrix[i])
                 return false;
         }
         return true;
