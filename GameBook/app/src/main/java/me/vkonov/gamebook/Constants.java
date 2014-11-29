@@ -8,6 +8,7 @@ public class Constants {
 
     public static final String varHeroEnergy = "Energy";
     public static final String varItems = "Items";
+    public static final String varCurrentChapter = "currentChapter";
     public static final int idChapterOne = 1;
     public static final int idChapterTwo = 2;
     public static final int idChapterThree = 3;

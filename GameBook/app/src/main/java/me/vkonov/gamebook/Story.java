@@ -104,7 +104,7 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
 
         // Init
         hero = Hero.getInstance();
-        currentChapter = 1;
+        currentChapter = 0;
         setView(R.layout.welcome_screen);
 
     }
@@ -150,7 +150,7 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
                 if (!name.isEmpty()) {
                     hero.setName(name);
                     setView(R.layout.activity_story);
-
+                    currentChapter = 1;
                     loadChapter(currentChapter);
 
                     Log.d(getLocalClassName(), "Player name: " + hero.getName());
@@ -177,5 +177,26 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Do nothing
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(Constants.varCurrentChapter, currentChapter);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        if (savedInstanceState.containsKey(Constants.varCurrentChapter)) {
+            currentChapter = savedInstanceState.getInt(Constants.varCurrentChapter);
+            if (currentChapter != 0) {
+                setView(R.layout.activity_story);
+                loadChapter(currentChapter);
+            } else {
+                setView(R.layout.welcome_screen);
+            }
+        }
+        super.onRestoreInstanceState(savedInstanceState);
+
     }
 }
