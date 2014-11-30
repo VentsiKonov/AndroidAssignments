@@ -14,31 +14,38 @@
     <string name="lblStats">Stats</string>
     <string name="userInputNameToast">Please input your name in the box above!</string>
 
-    <!--Chapter One-->
+    <!-- Chapter One -->
     <string name="chapterOneTitle">Chapter One</string>
     <string name="chapterOneText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus purus vitae semper consectetur.
         In eu purus eget diam rutrum dignissim. Suspendisse egestas erat ac turpis blandit tincidunt. Aliquam mollis risus ac est tempor, non tristique nulla placerat.
         Donec ut facilisis eros, a varius lorem. Nunc sit amet ante imperdiet, sagittis mi sed, sagittis risus. Vestibulum euismod lobortis nisi sed consequat.
         Nullam bibendum elit velit, consectetur elementum odio finibus in. Integer ut iaculis nulla. In felis erat, bibendum malesuada placerat a, vehicula at orci.
         Etiam eget augue quis odio posuere egestas id ut ligula.</string>
+
     <string-array name="chapterOneChoices">
         <item>Select your action</item>
         <item>Kill guy one</item>
         <item>Don\'t kill guy one</item>
     </string-array>
 
-    <!--Chapter Two-->
+    <!-- Chapter Two -->
     <string name="chapterTwoTitle">Chapter Two</string>
     <string name="chapterTwoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus purus vitae semper consectetur.
         In eu purus eget diam rutrum dignissim. Suspendisse egestas erat ac turpis blandit tincidunt. Aliquam mollis risus ac est tempor, non tristique nulla placerat.
         Donec ut facilisis eros, a varius lorem. Nunc sit amet ante imperdiet, sagittis mi sed, sagittis risus. Vestibulum euismod lobortis nisi sed consequat.
         Nullam bibendum elit velit, consectetur elementum odio finibus in. Integer ut iaculis nulla. In felis erat, bibendum malesuada placerat a, vehicula at orci.
         Etiam eget augue quis odio posuere egestas id ut ligula.</string>
+
     <string-array name="chapterTwoChoices">
         <item>Select your action</item>
         <item>Get item for 10 money</item>
         <item>Steal item</item>
         <item>Get back on your way</item>
     </string-array>
+
+    <string name="title_activity_open_chest">Found a chest!</string>
+    <string name="chestInstructions">If you have a key in your inventory, tap the chest to open it! You can also leave it behind.</string>
+    <string name="lblLeaveChest">Leave chest behind</string>
+    <string name="title_activity_stats">Stats</string>
 
 </resources>

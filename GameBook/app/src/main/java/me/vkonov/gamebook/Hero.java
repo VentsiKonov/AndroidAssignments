@@ -16,6 +16,8 @@ public class Hero {
         stats = new HashMap<String, Integer>();
         name = "";
         stats.put(Constants.varHeroEnergy, 10);
+        stats.put(Constants.varHeroFavour, 2); // No idea for ranges yet
+        stats.put(Constants.varHeroStrength, 10);
     }
 
     public void setName(String name) {
@@ -32,6 +34,22 @@ public class Hero {
 
     public ArrayList<String> getItems() {
         return items;
+    }
+
+    public void setItems(ArrayList<String> items) {
+        this.items = items;
+    }
+
+    public void setFavour(int value) {
+        stats.put(Constants.varHeroFavour, value);
+    }
+
+    public void setEnergy(int value) {
+        stats.put(Constants.varHeroEnergy, value);
+    }
+
+    public void setStrength(int value) {
+        stats.put(Constants.varHeroStrength, value);
     }
 
     public HashMap<String, Integer> getStats() {

@@ -15,6 +15,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 
 public class Story extends Activity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -26,25 +29,16 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
     Spinner userChoice;
 
     private void loadChapter(int id) {
-        ArrayAdapter adapter = null;
-        switch (id) {
-            case Constants.idChapterOne:
-                chapterTitle.setText(R.string.chapterOneTitle);
-                chapterText.setText(R.string.chapterOneText);
-                adapter = ArrayAdapter.createFromResource(this, R.array.chapterOneChoices, android.R.layout.simple_spinner_item);
-                break;
 
-            case Constants.idChapterTwo:
-                chapterTitle.setText(R.string.chapterTwoTitle);
-                chapterText.setText(R.string.chapterTwoText);
-                adapter = ArrayAdapter.createFromResource(this, R.array.chapterTwoChoices, android.R.layout.simple_spinner_item);
-                break;
-        }
-        if (adapter != null) {
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            userChoice.setAdapter(adapter);
-            userChoice.setOnItemSelectedListener(this);
-        }
+        chapterTitle.setText(Constants.chapters[id - 1].titleResource);
+        chapterText.setText(Constants.chapters[id - 1].textResource);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, Constants.chapters[id - 1].choicesResource, android.R.layout.simple_spinner_item);
+
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        userChoice.setAdapter(adapter);
+        userChoice.setOnItemSelectedListener(this);
+
         currentChapter = id;
     }
 
@@ -68,28 +62,38 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
     }
 
     private void handleHeroDecision(int heroDecision) {
+        // TODO: This method needs a lot more thought, these switches are ridiculous
         int nextChapter = currentChapter;
+        Random random = new Random();
+        if (random.nextInt(10) < hero.getStats().get(Constants.varHeroFavour)) {
+            Intent i = new Intent(this, OpenChest.class);
+            i.putStringArrayListExtra(Constants.varItems, hero.getItems());
+            i.putExtra(Constants.varHeroFavour, hero.getStats().get(Constants.varHeroFavour));
+            startActivityForResult(i, Constants.varChestRequestCode);
+        }
+
         switch (currentChapter) {
-            case Constants.idChapterOne:
+            case 1: // Constants.chapters[0].ID:
                 switch (heroDecision) {
                     case 1:
-                        nextChapter = Constants.idChapterTwo;
+                        nextChapter = Constants.chapters[1].ID; // 2
 
                         break;
                     case 2:
-                        nextChapter = Constants.idChapterFive;
+                        nextChapter = Constants.chapters[2].ID; // 3
 
                         break;
                 }
                 break;
-            case Constants.idChapterTwo:
+            case 2:
                 switch (heroDecision) {
                     case 1:
-                        nextChapter = Constants.idChapterFour;
+                        nextChapter = Constants.chapters[0].ID; // 5
+//                        nextChapter = Constants.chapters[4].ID; // 5
 
                         break;
                     case 2:
-                        nextChapter = Constants.idChapterFive;
+                        nextChapter = Constants.chapters[5].ID; // 6
 
                 }
                 break;
@@ -177,6 +181,30 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Do nothing
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_CANCELED) {
+            Toast.makeText(this, "You decided to leave the chest behind!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (resultCode != RESULT_OK) {
+            Log.d(getLocalClassName(), "Activity for result is not ok!\nIntent data: \n" + (data != null ? data.toString() : "null"));
+            Toast.makeText(this, "Sorry, something is wrong!", Toast.LENGTH_SHORT).show();
+        }
+
+        switch (requestCode) {
+            case Constants.varChestRequestCode:
+                if (data != null) {
+                    ArrayList<String> heroItems = data.getStringArrayListExtra(Constants.varItems);
+                    hero.setItems(heroItems);
+                    hero.setFavour(data.getIntExtra(Constants.varHeroFavour, 3));
+                }
+                break;
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
