@@ -11,6 +11,7 @@ public class Constants {
     public static final String varHeroEnergy = "Energy";
     public static final String varHeroStrength = "Strength";
     public static final String varHeroFavour = "Favour";
+    public static final String varHeroName = "Name";
     public static final String varItems = "Items";
 
     public static enum varGameItems {

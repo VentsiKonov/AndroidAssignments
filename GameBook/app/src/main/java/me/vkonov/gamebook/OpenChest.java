@@ -34,6 +34,7 @@ public class OpenChest extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        // TODO: Extract string resources
         switch (view.getId()) {
             case R.id.leaveChest:
                 setResult(RESULT_CANCELED);
@@ -41,18 +42,23 @@ public class OpenChest extends Activity implements View.OnClickListener {
                 break;
             case R.id.imageView:
                 Intent data = getIntent();
+                Random r = new Random();
+                Constants.varGameItems[] items = Constants.varGameItems.values();
+                String newItem = items[r.nextInt(items.length)].toString();
+
                 if (heroItems.contains(Constants.varGameItems.Key.toString())) {
                     heroItems.remove(Constants.varGameItems.Key.toString());
 
-                    Constants.varGameItems[] items = Constants.varGameItems.values();
-                    Random r = new Random();
-                    String newItem = items[r.nextInt(items.length)].toString();
                     heroItems.add(newItem);
 
-                    Toast.makeText(this, "You have a new item in your inventory: \n" + newItem, Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "You opened the chest and found: \n" + newItem, Toast.LENGTH_LONG).show();
                 } else {
                     --heroFavour;
-                    Toast.makeText(this, "You didn't have a key! Your favour decreased!", Toast.LENGTH_LONG).show();
+                    if (r.nextBoolean()) {
+                        heroItems.add(newItem);
+                        Toast.makeText(this, "You managed to break the chest and found: \n" + newItem, Toast.LENGTH_LONG).show();
+                    }
+                    Toast.makeText(this, "You didn't have a key! Your favour decreased to " + String.valueOf(heroFavour) + "!", Toast.LENGTH_LONG).show();
 
                 }
                 data.putExtra(Constants.varItems, heroItems);

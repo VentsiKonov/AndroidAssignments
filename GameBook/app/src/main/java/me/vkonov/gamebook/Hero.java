@@ -16,7 +16,7 @@ public class Hero {
         stats = new HashMap<String, Integer>();
         name = "";
         stats.put(Constants.varHeroEnergy, 10);
-        stats.put(Constants.varHeroFavour, 2); // No idea for ranges yet
+        stats.put(Constants.varHeroFavour, 3); // No idea for ranges yet
         stats.put(Constants.varHeroStrength, 10);
     }
 

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Random;
 
 
@@ -113,7 +114,6 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -130,20 +130,31 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
         if (hero.getName().isEmpty())
             return false;
 
+        Intent i = null;
         switch (id) {
             case R.id.inventory:
-                Intent inventory = new Intent(this, Inventory.class);
-                inventory.putStringArrayListExtra(Constants.varItems, hero.getItems());
-                startActivity(inventory);
+                i = new Intent(this, Inventory.class);
+                i.putStringArrayListExtra(Constants.varItems, hero.getItems());
+
                 break;
             case R.id.stats:
+                i = new Intent(this, Stats.class);
+                i.putExtra(Constants.varHeroName, hero.getName());
+                for (Map.Entry<String, Integer> stat : hero.getStats().entrySet()) {
+                    i.putExtra(stat.getKey(), stat.getValue());
+                }
+//                HashMap<String, Integer> stats = hero.getStats();
+//                i.putExtra(Constants.varHeroFavour, stats.get(Constants.varHeroFavour));
+//                i.putExtra(Constants.varHeroEnergy, stats.get(Constants.varHeroEnergy));
+//                i.putExtra(Constants.varHeroStrength, stats.get(Constants.varHeroStrength));
                 break;
 
         }
+        if (i != null)
+            startActivity(i);
 
         return super.onOptionsItemSelected(item);
     }
-
 
     @Override
     public void onClick(View view) {
@@ -167,6 +178,7 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        // TODO: Extract string resources
         if (i != 0) {
 
             String selection = ((TextView) view).getText().toString();
@@ -185,6 +197,7 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO: Extract string resources
         if (resultCode == RESULT_CANCELED) {
             Toast.makeText(this, "You decided to leave the chest behind!", Toast.LENGTH_SHORT).show();
             return;

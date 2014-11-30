@@ -8,5 +8,100 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="me.vkonov.gamebook.Stats">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/currentStats"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:id="@+id/textView"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/textView"
+        android:text="@string/lblName"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/name"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/name"
+        android:text="@string/lblFavour"
+        android:id="@+id/favour"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/favour"
+        android:text="@string/lblEnergy"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:id="@+id/energy" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/energy"
+        android:text="@string/lblStrength"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:id="@+id/strength" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/close"
+        android:text="@string/close"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameField"
+        android:editable="false"
+        android:layout_alignBaseline="@+id/name"
+        android:layout_alignParentEnd="true"
+        android:ems="7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/favour"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/favourField"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/energy"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/energyField"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/strength"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/strengthField"
+        android:textAppearance="?android:textAppearanceLarge" />
 
 </RelativeLayout>
