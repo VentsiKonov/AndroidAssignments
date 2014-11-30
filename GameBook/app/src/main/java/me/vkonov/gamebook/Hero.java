@@ -12,6 +12,10 @@ public class Hero {
     private static Hero instance = new Hero();
 
     private Hero() {
+        initialize();
+    }
+
+    public void initialize() {
         items = new ArrayList<String>();
         items.add(Constants.varGameItems.Key.toString());
         stats = new HashMap<String, Integer>();

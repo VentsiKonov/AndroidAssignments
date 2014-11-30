@@ -172,7 +172,6 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
                         nextChapter = Constants.chapters[4].ID;
                         break;
                     case 2:
-                        // Open door, rand->chest with two locks (special chest)
                         if (random.nextInt(7) < hero.getStats().get(Constants.varHeroFavour)) {
                             i.putExtra(Constants.varSpecialItem, true);
                             startActivityForResult(i, Constants.varChestRequestCode);
@@ -184,7 +183,10 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
             case 9:
                 switch (heroDecision) {
                     case 1:
+                        // Reinitialize game
                         nextChapter = Constants.chapters[0].ID;
+                        hero.initialize();
+
                         break;
                 }
                 break;
