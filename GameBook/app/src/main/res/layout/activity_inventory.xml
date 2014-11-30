@@ -30,6 +30,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/lblUsePotion"
+        android:id="@+id/usePotion"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_below="@id/items"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/goBack"
         android:text="@string/close"
         android:layout_centerHorizontal="true"

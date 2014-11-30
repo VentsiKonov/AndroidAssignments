@@ -89,12 +89,20 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
             case 2:
                 switch (heroDecision) {
                     case 1:
-                        // Fight with something
+                        Intent battle = new Intent(this, Battle.class);
+                        battle.putStringArrayListExtra(Constants.varItems, hero.getItems());
+                        battle.putExtra(Constants.varHeroEnergy, hero.getStats().get(Constants.varHeroEnergy));
+                        startActivityForResult(battle, Constants.varBattleRequestCode);
                         nextChapter = Constants.chapters[6].ID;
                         break;
                     case 2:
-                        // Random if run away + Strength-- -> next | else die
-                        nextChapter = Constants.chapters[5].ID;
+                        if (random.nextInt(10) < hero.getStats().get(Constants.varHeroFavour)) {
+                            nextChapter = 0;
+                            startActivity(new Intent(this, Death.class));
+                            finish();
+                        } else {
+                            nextChapter = Constants.chapters[5].ID;
+                        }
                         break;
                 }
                 break;
@@ -106,6 +114,7 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
                         String newItem = items[random.nextInt(items.length)].toString();
                         heroItems.add(newItem);
                         hero.setItems(heroItems);
+                        Toast.makeText(this, "You gained a new item!", Toast.LENGTH_SHORT).show();
                         nextChapter = Constants.chapters[7].ID;
                         break;
                     case 2:
@@ -164,6 +173,10 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
                         break;
                     case 2:
                         // Open door, rand->chest with two locks (special chest)
+                        if (random.nextInt(7) < hero.getStats().get(Constants.varHeroFavour)) {
+                            i.putExtra(Constants.varSpecialItem, true);
+                            startActivityForResult(i, Constants.varChestRequestCode);
+                        }
                         nextChapter = currentChapter;
                         break;
                 }
@@ -292,6 +305,12 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
                     hero.setFavour(data.getIntExtra(Constants.varHeroFavour, 3));
                 }
                 break;
+            case Constants.varBattleRequestCode:
+                if (data != null) {
+                    ArrayList<String> heroItems = data.getStringArrayListExtra(Constants.varItems);
+                    hero.setItems(heroItems);
+                    hero.setEnergy(data.getIntExtra(Constants.varHeroEnergy, 3));
+                }
 
         }
         super.onActivityResult(requestCode, resultCode, data);

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--TODO: refactor names-->
+
+    <!-- TODO: refactor names -->
     <string name="app_name">GameBook</string>
     <string name="action_settings">Settings</string>
     <string name="varHeroEnergy">Energy</string>
@@ -25,12 +26,11 @@
 
     <!-- Chapter One -->
     <string name="chapterOneTitle">Chapter One</string>
-    <string name="chapterOneText">
-        Some story to begin with. Who are you, where are you, what are you fighting for. Why do you have to choose a direction?
+    <string name="chapterOneText">        Some story to begin with. Who are you, where are you, what are you fighting for. Why do you have to choose a direction?
         \nDecide whether to go east or west.
         \nForest -> Chapter Two
-        \nRoad -> Chapter Three
-    </string>
+        \nRoad -> Chapter Three</string>
+
     <string-array name="chapterOneChoices">
         <item>Select your action</item>
         <item>Head west into the forest</item>
@@ -39,12 +39,11 @@
 
     <!-- Chapter Two -->
     <string name="chapterTwoTitle">Chapter Two</string>
-    <string name="chapterTwoText">
-        You need to fight something. Ugly monster/strange bandit. Choose whether to run or fight.
+    <string name="chapterTwoText">        You need to fight something. Ugly monster/strange bandit. Choose whether to run or fight.
         \nThe battle is to death.
         \nFight -> Fight activity -> Chapter Seven
-        \nRun -> Use favour and rand to determine if you escape or die. -> Chapter 6 if alive
-    </string>
+        \nRun -> Use favour and rand to determine if you escape or die. -> Chapter 6 if alive</string>
+
     <string-array name="chapterTwoChoices">
         <item>Select your action</item>
         <item>Fight</item>
@@ -53,11 +52,10 @@
 
     <!-- Chapter Three -->
     <string name="chapterThreeTitle">Chapter Three</string>
-    <string name="chapterThreeText">
-        You are given a decision to help someone in need.
+    <string name="chapterThreeText">        You are given a decision to help someone in need.
         Help -> item is given to you -> Chapter Eight
-        Don\'t help -> Strength-1 -> Chapter Four
-    </string>
+        Don\'t help -> Strength-1 -> Chapter Four</string>
+
     <string-array name="chapterThreeChoices">
         <item>Select your action</item>
         <item>Help</item>
@@ -66,12 +64,11 @@
 
     <!-- Chapter Four -->
     <string name="chapterFourTitle">Chapter Four</string>
-    <string name="chapterFourText">
-        Proprietary chest
+    <string name="chapterFourText">        Proprietary chest
         Possible directions:
         Forest -> Chapter Two
-        City -> Chapter Eight
-    </string>
+        City -> Chapter Eight</string>
+
     <string-array name="chapterFourChoices">
         <item>Select your action</item>
         <item>Forest</item>
@@ -80,10 +77,9 @@
 
     <!-- Chapter Five -->
     <string name="chapterFiveTitle">Chapter Five</string>
-    <string name="chapterFiveText">
-        The road to the city. Either take the second road or roam the forest.
-        Merchant? If enough time -> merchant activity + money
-    </string>
+    <string name="chapterFiveText">        The road to the city. Either take the second road or roam the forest.
+        Merchant? If enough time -> merchant activity + money</string>
+
     <string-array name="chapterFiveChoices">
         <item>Select your action</item>
         <item>Forest</item>
@@ -92,13 +88,12 @@
 
     <!-- Chapter Six -->
     <string name="chapterSixTitle">Chapter Six</string>
-    <string name="chapterSixText">
-        Lorem ipsum dolor sit amet x10
+    <string name="chapterSixText">        Lorem ipsum dolor sit amet x10
         Story, story, story.
         Found a key.
         Enter cave.
-        Proprietary chest.
-    </string>
+        Proprietary chest.</string>
+
     <string-array name="chapterSixChoices">
         <item>Select your action</item>
         <item>Go to next chapter</item>
@@ -106,10 +101,9 @@
 
     <!-- Chapter Seven -->
     <string name="chapterSevenTitle">Chapter Seven</string>
-    <string name="chapterSevenText">
-        Talk to someone, get something (item)
-        if(keyToSecretCastleDoor) find entrance to castle
-    </string>
+    <string name="chapterSevenText">        Talk to someone, get something (item)
+        if(keyToSecretCastleDoor) find entrance to castle</string>
+
     <string-array name="chapterSevenChoices">
         <item>Select your action</item>
         <item>City</item>
@@ -118,12 +112,11 @@
 
     <!-- Chapter Eight -->
     <string name="chapterEightTitle">Chapter Eight</string>
-    <string name="chapterEightText">
-        City
+    <string name="chapterEightText">        City
         Some stuff, more story
         Open magic door -> sometimes chest with two locks appears
-        This chest sometimes drops key to the castle\'s secret door
-    </string>
+        This chest sometimes drops key to the castle\'s secret door</string>
+
     <string-array name="chapterEightChoices">
         <item>Select your action</item>
         <item>City road</item>
@@ -132,14 +125,21 @@
 
     <!-- Chapter Nine -->
     <string name="chapterNineTitle">Chapter Nine</string>
-    <string name="chapterNineText">
-        Castle door opens
-        Next app (next update) this one is done
-    </string>
+    <string name="chapterNineText">        Castle door opens
+        Next app (next update) this one is done</string>
+
     <string-array name="chapterNineChoices">
         <item>Select your action</item>
         <item>Start a new game</item>
     </string-array>
 
+    <string name="title_activity_death">Death</string>
+    <string name="lblGameEnd">You fought bravely but died in battle! You can start a new game.</string>
+    <string name="lblNewGame">New Game</string>
+    <string name="title_activity_battle">Battle</string>
+    <string name="lblUsePotion">Use a potion</string>
+    <string name="lblFight">Fight</string>
+    <string name="lblLoot">Loot bandit</string>
+    <string name="lblGoAlong">Go along</string>
 
 </resources>

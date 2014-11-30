@@ -13,6 +13,7 @@ public class Hero {
 
     private Hero() {
         items = new ArrayList<String>();
+        items.add(Constants.varGameItems.Key.toString());
         stats = new HashMap<String, Integer>();
         name = "";
         stats.put(Constants.varHeroEnergy, 10);

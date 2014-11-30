@@ -11,7 +11,7 @@
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/chest_image_size"
+        android:layout_height="@dimen/image_size"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:src="@drawable/chest"

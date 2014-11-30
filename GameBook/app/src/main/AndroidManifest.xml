@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name="me.vkonov.gamebook.OpenChest"
-            android:label="@string/title_activity_open_chest"></activity>
+            android:label="@string/title_activity_open_chest" />
         <activity
             android:name="me.vkonov.gamebook.Stats"
             android:label="@string/title_activity_stats"
@@ -36,6 +36,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="me.vkonov.gamebook.Story" />
         </activity>
+        <activity
+            android:name="me.vkonov.gamebook.Death"
+            android:label="@string/title_activity_death"></activity>
+        <activity
+            android:name="me.vkonov.gamebook.Battle"
+            android:label="@string/title_activity_battle"></activity>
     </application>
 
 </manifest>

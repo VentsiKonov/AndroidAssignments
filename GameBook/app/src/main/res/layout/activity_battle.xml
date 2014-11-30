@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="me.vkonov.gamebook.Battle">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/image_size"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/bandit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strength"
+        android:text="@string/lblStrength"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lblFight"
+        android:layout_below="@id/strength"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:id="@+id/fight" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loot"
+        android:text="@string/lblLoot"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fight"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:visibility="gone"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/skip"
+        android:text="@string/lblGoAlong"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/loot"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:visibility="gone"
+
+        />
+
+</RelativeLayout>

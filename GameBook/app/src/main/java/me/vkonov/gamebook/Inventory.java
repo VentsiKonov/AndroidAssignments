@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,15 @@ public class Inventory extends Activity {
             @Override
             public void onClick(View view) {
                 Inventory.this.finish();
+            }
+        });
+
+        Button usePotion = (Button) findViewById(R.id.usePotion);
+        usePotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Inventory.this, "Not implemented", Toast.LENGTH_SHORT).show();
+                // TODO: Implement potions
             }
         });
     }

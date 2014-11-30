@@ -7,6 +7,7 @@ public class Constants {
     }
 
     public static final int varChestRequestCode = 90; // Used to call startActivityForResult(); for battles and inventory eventually
+    public static final int varBattleRequestCode = 100;
 
     public static final String varHeroEnergy = "Energy";
     public static final String varHeroStrength = "Strength";
@@ -18,7 +19,8 @@ public class Constants {
     public static enum varGameItems {
         Key,
         EnergyPotion,
-        Sword
+        Sword,
+        GoodLuckCharm
     }
     public static final String varCurrentChapter = "currentChapter";
     public static final ChapterData[] chapters = {

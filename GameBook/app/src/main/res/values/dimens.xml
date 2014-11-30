@@ -3,5 +3,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="story_text_height">250dp</dimen>
-    <dimen name="chest_image_size">250dp</dimen>
+    <dimen name="image_size">250dp</dimen>
 </resources>
