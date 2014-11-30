@@ -13,36 +13,6 @@
     <string name="lblInventory">Inventory</string>
     <string name="lblStats">Stats</string>
     <string name="userInputNameToast">Please input your name in the box above!</string>
-
-    <!-- Chapter One -->
-    <string name="chapterOneTitle">Chapter One</string>
-    <string name="chapterOneText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus purus vitae semper consectetur.
-        In eu purus eget diam rutrum dignissim. Suspendisse egestas erat ac turpis blandit tincidunt. Aliquam mollis risus ac est tempor, non tristique nulla placerat.
-        Donec ut facilisis eros, a varius lorem. Nunc sit amet ante imperdiet, sagittis mi sed, sagittis risus. Vestibulum euismod lobortis nisi sed consequat.
-        Nullam bibendum elit velit, consectetur elementum odio finibus in. Integer ut iaculis nulla. In felis erat, bibendum malesuada placerat a, vehicula at orci.
-        Etiam eget augue quis odio posuere egestas id ut ligula.</string>
-
-    <string-array name="chapterOneChoices">
-        <item>Select your action</item>
-        <item>Kill guy one</item>
-        <item>Don\'t kill guy one</item>
-    </string-array>
-
-    <!-- Chapter Two -->
-    <string name="chapterTwoTitle">Chapter Two</string>
-    <string name="chapterTwoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus purus vitae semper consectetur.
-        In eu purus eget diam rutrum dignissim. Suspendisse egestas erat ac turpis blandit tincidunt. Aliquam mollis risus ac est tempor, non tristique nulla placerat.
-        Donec ut facilisis eros, a varius lorem. Nunc sit amet ante imperdiet, sagittis mi sed, sagittis risus. Vestibulum euismod lobortis nisi sed consequat.
-        Nullam bibendum elit velit, consectetur elementum odio finibus in. Integer ut iaculis nulla. In felis erat, bibendum malesuada placerat a, vehicula at orci.
-        Etiam eget augue quis odio posuere egestas id ut ligula.</string>
-
-    <string-array name="chapterTwoChoices">
-        <item>Select your action</item>
-        <item>Get item for 10 money</item>
-        <item>Steal item</item>
-        <item>Get back on your way</item>
-    </string-array>
-
     <string name="title_activity_open_chest">Found a chest!</string>
     <string name="chestInstructions">If you have a key in your inventory, tap the chest to open it! You can also leave it behind.</string>
     <string name="lblLeaveChest">Leave chest behind</string>
@@ -52,5 +22,124 @@
     <string name="lblName">Name:</string>
     <string name="lblEnergy">Energy:</string>
     <string name="lblStrength">Strength:</string>
+
+    <!-- Chapter One -->
+    <string name="chapterOneTitle">Chapter One</string>
+    <string name="chapterOneText">
+        Some story to begin with. Who are you, where are you, what are you fighting for. Why do you have to choose a direction?
+        \nDecide whether to go east or west.
+        \nForest -> Chapter Two
+        \nRoad -> Chapter Three
+    </string>
+    <string-array name="chapterOneChoices">
+        <item>Select your action</item>
+        <item>Head west into the forest</item>
+        <item>Take the road</item>
+    </string-array>
+
+    <!-- Chapter Two -->
+    <string name="chapterTwoTitle">Chapter Two</string>
+    <string name="chapterTwoText">
+        You need to fight something. Ugly monster/strange bandit. Choose whether to run or fight.
+        \nThe battle is to death.
+        \nFight -> Fight activity -> Chapter Seven
+        \nRun -> Use favour and rand to determine if you escape or die. -> Chapter 6 if alive
+    </string>
+    <string-array name="chapterTwoChoices">
+        <item>Select your action</item>
+        <item>Fight</item>
+        <item>Try to run</item>
+    </string-array>
+
+    <!-- Chapter Three -->
+    <string name="chapterThreeTitle">Chapter Three</string>
+    <string name="chapterThreeText">
+        You are given a decision to help someone in need.
+        Help -> item is given to you -> Chapter Eight
+        Don\'t help -> Strength-1 -> Chapter Four
+    </string>
+    <string-array name="chapterThreeChoices">
+        <item>Select your action</item>
+        <item>Help</item>
+        <item>Don\'t help</item>
+    </string-array>
+
+    <!-- Chapter Four -->
+    <string name="chapterFourTitle">Chapter Four</string>
+    <string name="chapterFourText">
+        Proprietary chest
+        Possible directions:
+        Forest -> Chapter Two
+        City -> Chapter Eight
+    </string>
+    <string-array name="chapterFourChoices">
+        <item>Select your action</item>
+        <item>Forest</item>
+        <item>City</item>
+    </string-array>
+
+    <!-- Chapter Five -->
+    <string name="chapterFiveTitle">Chapter Five</string>
+    <string name="chapterFiveText">
+        The road to the city. Either take the second road or roam the forest.
+        Merchant? If enough time -> merchant activity + money
+    </string>
+    <string-array name="chapterFiveChoices">
+        <item>Select your action</item>
+        <item>Forest</item>
+        <item>Road</item>
+    </string-array>
+
+    <!-- Chapter Six -->
+    <string name="chapterSixTitle">Chapter Six</string>
+    <string name="chapterSixText">
+        Lorem ipsum dolor sit amet x10
+        Story, story, story.
+        Found a key.
+        Enter cave.
+        Proprietary chest.
+    </string>
+    <string-array name="chapterSixChoices">
+        <item>Select your action</item>
+        <item>Go to next chapter</item>
+    </string-array>
+
+    <!-- Chapter Seven -->
+    <string name="chapterSevenTitle">Chapter Seven</string>
+    <string name="chapterSevenText">
+        Talk to someone, get something (item)
+        if(keyToSecretCastleDoor) find entrance to castle
+    </string>
+    <string-array name="chapterSevenChoices">
+        <item>Select your action</item>
+        <item>City</item>
+        <item>Try to enter castle</item>
+    </string-array>
+
+    <!-- Chapter Eight -->
+    <string name="chapterEightTitle">Chapter Eight</string>
+    <string name="chapterEightText">
+        City
+        Some stuff, more story
+        Open magic door -> sometimes chest with two locks appears
+        This chest sometimes drops key to the castle\'s secret door
+    </string>
+    <string-array name="chapterEightChoices">
+        <item>Select your action</item>
+        <item>City road</item>
+        <item>Open magic door</item>
+    </string-array>
+
+    <!-- Chapter Nine -->
+    <string name="chapterNineTitle">Chapter Nine</string>
+    <string name="chapterNineText">
+        Castle door opens
+        Next app (next update) this one is done
+    </string>
+    <string-array name="chapterNineChoices">
+        <item>Select your action</item>
+        <item>Start a new game</item>
+    </string-array>
+
 
 </resources>

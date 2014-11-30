@@ -64,38 +64,115 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
 
     private void handleHeroDecision(int heroDecision) {
         // TODO: This method needs a lot more thought, these switches are ridiculous
-        int nextChapter = currentChapter;
         Random random = new Random();
+
+        Intent i = new Intent(this, OpenChest.class);
+        i.putStringArrayListExtra(Constants.varItems, hero.getItems());
+        i.putExtra(Constants.varHeroFavour, hero.getStats().get(Constants.varHeroFavour));
+
         if (random.nextInt(10) < hero.getStats().get(Constants.varHeroFavour)) {
-            Intent i = new Intent(this, OpenChest.class);
-            i.putStringArrayListExtra(Constants.varItems, hero.getItems());
-            i.putExtra(Constants.varHeroFavour, hero.getStats().get(Constants.varHeroFavour));
             startActivityForResult(i, Constants.varChestRequestCode);
         }
+        int nextChapter = currentChapter;
 
         switch (currentChapter) {
             case 1: // Constants.chapters[0].ID:
                 switch (heroDecision) {
                     case 1:
-                        nextChapter = Constants.chapters[1].ID; // 2
-
+                        nextChapter = Constants.chapters[1].ID;
                         break;
                     case 2:
-                        nextChapter = Constants.chapters[2].ID; // 3
-
+                        nextChapter = Constants.chapters[2].ID;
                         break;
                 }
                 break;
             case 2:
                 switch (heroDecision) {
                     case 1:
-                        nextChapter = Constants.chapters[0].ID; // 5
-//                        nextChapter = Constants.chapters[4].ID; // 5
-
+                        // Fight with something
+                        nextChapter = Constants.chapters[6].ID;
                         break;
                     case 2:
-                        nextChapter = Constants.chapters[5].ID; // 6
-
+                        // Random if run away + Strength-- -> next | else die
+                        nextChapter = Constants.chapters[5].ID;
+                        break;
+                }
+                break;
+            case 3:
+                switch (heroDecision) {
+                    case 1:
+                        ArrayList<String> heroItems = hero.getItems();
+                        Constants.varGameItems[] items = Constants.varGameItems.values();
+                        String newItem = items[random.nextInt(items.length)].toString();
+                        heroItems.add(newItem);
+                        hero.setItems(heroItems);
+                        nextChapter = Constants.chapters[7].ID;
+                        break;
+                    case 2:
+                        hero.setStrength(hero.getStats().get(Constants.varHeroStrength) - 1);
+                        nextChapter = Constants.chapters[3].ID;
+                        break;
+                }
+                break;
+            case 4:
+                startActivityForResult(i, Constants.varChestRequestCode);
+                switch (heroDecision) {
+                    case 1:
+                        nextChapter = Constants.chapters[1].ID;
+                        break;
+                    case 2:
+                        nextChapter = Constants.chapters[7].ID;
+                        break;
+                }
+                break;
+            case 5:
+                switch (heroDecision) {
+                    // Merchant? some day
+                    case 1:
+                        nextChapter = Constants.chapters[1].ID;
+                        break;
+                    case 2:
+                        nextChapter = Constants.chapters[2].ID;
+                        break;
+                }
+                break;
+            case 6:
+                startActivityForResult(i, Constants.varChestRequestCode);
+                switch (heroDecision) {
+                    case 1:
+                        nextChapter = Constants.chapters[6].ID;
+                        break;
+                }
+                break;
+            case 7:
+                switch (heroDecision) {
+                    case 1:
+                        nextChapter = Constants.chapters[7].ID;
+                        break;
+                    case 2:
+                        if (hero.getItems().contains(Constants.varSpecialItem))
+                            nextChapter = Constants.chapters[8].ID;
+                        else
+                            Toast.makeText(this, "You don\'t have the special key!", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                break;
+            case 8:
+                switch (heroDecision) {
+                    case 1:
+                        nextChapter = Constants.chapters[4].ID;
+                        break;
+                    case 2:
+                        // Open door, rand->chest with two locks (special chest)
+                        nextChapter = currentChapter;
+                        break;
+                }
+                break;
+            case 9:
+                switch (heroDecision) {
+                    case 1:
+                        nextChapter = Constants.chapters[0].ID;
+                        break;
                 }
                 break;
         }
