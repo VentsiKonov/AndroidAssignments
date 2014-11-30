@@ -115,7 +115,7 @@
     <!-- Chapter Eight -->
     <string name="chapterEightTitle">Chapter Eight</string>
     <string name="chapterEightText">City.
-        In a dark ally in the city, right next to the exit to the road, there is a door. You can tell it's magical door. What happens if you open it?
+        In a dark ally in the city, right next to the exit to the road, there is a door. You can tell it\'s magical door. What happens if you open it?
     </string>
 
     <string-array name="chapterEightChoices">
