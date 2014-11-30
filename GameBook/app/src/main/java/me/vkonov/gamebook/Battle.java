@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -29,6 +30,8 @@ public class Battle extends Activity implements View.OnClickListener {
         loot.setOnClickListener(this);
         skip = (Button) findViewById(R.id.skip);
         skip.setOnClickListener(this);
+        TextView strength = (TextView) findViewById(R.id.strength);
+        strength.setText(strength.getText().toString() + " " + String.valueOf(banditStrength));
 
         data = getIntent();
         heroItems = data.getStringArrayListExtra(Constants.varItems);

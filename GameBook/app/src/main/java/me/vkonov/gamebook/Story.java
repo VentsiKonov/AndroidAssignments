@@ -309,10 +309,19 @@ public class Story extends Activity implements View.OnClickListener, AdapterView
                 break;
             case Constants.varBattleRequestCode:
                 if (data != null) {
+                    int heroEnergy = data.getIntExtra(Constants.varHeroEnergy, 3);
+
+                    if (heroEnergy <= 0) {
+                        hero.initialize();
+                        setView(R.layout.welcome_screen);
+                        startActivity(new Intent(this, Death.class));
+                        break;
+                    }
                     ArrayList<String> heroItems = data.getStringArrayListExtra(Constants.varItems);
                     hero.setItems(heroItems);
-                    hero.setEnergy(data.getIntExtra(Constants.varHeroEnergy, 3));
+                    hero.setEnergy(heroEnergy);
                 }
+                break;
 
         }
         super.onActivityResult(requestCode, resultCode, data);

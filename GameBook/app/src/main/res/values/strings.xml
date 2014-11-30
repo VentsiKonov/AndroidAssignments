@@ -23,13 +23,21 @@
     <string name="lblName">Name:</string>
     <string name="lblEnergy">Energy:</string>
     <string name="lblStrength">Strength:</string>
+    <string name="title_activity_death">Death</string>
+    <string name="lblGameEnd">You fought bravely but died in battle! You can start a new game.</string>
+    <string name="lblNewGame">New Game</string>
+    <string name="title_activity_battle">Battle</string>
+    <string name="lblUsePotion">Use a potion</string>
+    <string name="lblFight">Fight</string>
+    <string name="lblLoot">Loot bandit</string>
+    <string name="lblGoAlong">Go along</string>
 
     <!-- Chapter One -->
     <string name="chapterOneTitle">Chapter One</string>
-    <string name="chapterOneText">        Some story to begin with. Who are you, where are you, what are you fighting for. Why do you have to choose a direction?
-        \nDecide whether to go east or west.
-        \nForest -> Chapter Two
-        \nRoad -> Chapter Three</string>
+    <string name="chapterOneText">
+        Hi! I am sorry my story is practically missing. As soon as I come up with a good idea and a good story, I will fill the whole book.
+        And I hope that won\'t be a big problem.
+        \nWhich path do you prefer?</string>
 
     <string-array name="chapterOneChoices">
         <item>Select your action</item>
@@ -39,10 +47,7 @@
 
     <!-- Chapter Two -->
     <string name="chapterTwoTitle">Chapter Two</string>
-    <string name="chapterTwoText">        You need to fight something. Ugly monster/strange bandit. Choose whether to run or fight.
-        \nThe battle is to death.
-        \nFight -> Fight activity -> Chapter Seven
-        \nRun -> Use favour and rand to determine if you escape or die. -> Chapter 6 if alive</string>
+    <string name="chapterTwoText">You need to fight a bandit. Choose whether to run or fight.</string>
 
     <string-array name="chapterTwoChoices">
         <item>Select your action</item>
@@ -52,9 +57,9 @@
 
     <!-- Chapter Three -->
     <string name="chapterThreeTitle">Chapter Three</string>
-    <string name="chapterThreeText">        You are given a decision to help someone in need.
-        Help -> item is given to you -> Chapter Eight
-        Don\'t help -> Strength-1 -> Chapter Four</string>
+    <string name="chapterThreeText">You are given a decision to help someone in need.
+        You will receive an item if you do.
+    </string>
 
     <string-array name="chapterThreeChoices">
         <item>Select your action</item>
@@ -64,10 +69,7 @@
 
     <!-- Chapter Four -->
     <string name="chapterFourTitle">Chapter Four</string>
-    <string name="chapterFourText">        Proprietary chest
-        Possible directions:
-        Forest -> Chapter Two
-        City -> Chapter Eight</string>
+    <string name="chapterFourText"> You come across a chest. You can open it or leave it be. Than you can go in the forest again or in the City.</string>
 
     <string-array name="chapterFourChoices">
         <item>Select your action</item>
@@ -77,8 +79,8 @@
 
     <!-- Chapter Five -->
     <string name="chapterFiveTitle">Chapter Five</string>
-    <string name="chapterFiveText">        The road to the city. Either take the second road or roam the forest.
-        Merchant? If enough time -> merchant activity + money</string>
+    <string name="chapterFiveText">The road to the city. Either take the second road or roam the forest.
+        Someday there will be a merchant here.</string>
 
     <string-array name="chapterFiveChoices">
         <item>Select your action</item>
@@ -88,7 +90,7 @@
 
     <!-- Chapter Six -->
     <string name="chapterSixTitle">Chapter Six</string>
-    <string name="chapterSixText">        Lorem ipsum dolor sit amet x10
+    <string name="chapterSixText">Lorem ipsum dolor sit amet x10
         Story, story, story.
         Found a key.
         Enter cave.
@@ -96,13 +98,13 @@
 
     <string-array name="chapterSixChoices">
         <item>Select your action</item>
-        <item>Go to next chapter</item>
+        <item>Go into the cave</item>
     </string-array>
 
     <!-- Chapter Seven -->
     <string name="chapterSevenTitle">Chapter Seven</string>
-    <string name="chapterSevenText">        Talk to someone, get something (item)
-        if(keyToSecretCastleDoor) find entrance to castle</string>
+    <string name="chapterSevenText">You find an item here. And also you find a door that leads you straight into the castle. You are trying to get there. But the door needs a special key.
+    You can either try to open the door or head to the city.</string>
 
     <string-array name="chapterSevenChoices">
         <item>Select your action</item>
@@ -112,10 +114,9 @@
 
     <!-- Chapter Eight -->
     <string name="chapterEightTitle">Chapter Eight</string>
-    <string name="chapterEightText">        City
-        Some stuff, more story
-        Open magic door -> sometimes chest with two locks appears
-        This chest sometimes drops key to the castle\'s secret door</string>
+    <string name="chapterEightText">City.
+        In a dark ally in the city, right next to the exit to the road, there is a door. You can tell it's magical door. What happens if you open it?
+    </string>
 
     <string-array name="chapterEightChoices">
         <item>Select your action</item>
@@ -125,21 +126,14 @@
 
     <!-- Chapter Nine -->
     <string name="chapterNineTitle">Chapter Nine</string>
-    <string name="chapterNineText">        Castle door opens
-        Next app (next update) this one is done</string>
+    <string name="chapterNineText">
+        Castle door opens. Possible extension of the game but right after actually writing a good story for it.
+    </string>
 
     <string-array name="chapterNineChoices">
         <item>Select your action</item>
         <item>Start a new game</item>
     </string-array>
 
-    <string name="title_activity_death">Death</string>
-    <string name="lblGameEnd">You fought bravely but died in battle! You can start a new game.</string>
-    <string name="lblNewGame">New Game</string>
-    <string name="title_activity_battle">Battle</string>
-    <string name="lblUsePotion">Use a potion</string>
-    <string name="lblFight">Fight</string>
-    <string name="lblLoot">Loot bandit</string>
-    <string name="lblGoAlong">Go along</string>
 
 </resources>

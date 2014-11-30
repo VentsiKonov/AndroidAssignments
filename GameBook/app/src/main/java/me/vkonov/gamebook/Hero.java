@@ -20,7 +20,7 @@ public class Hero {
         items.add(Constants.varGameItems.Key.toString());
         stats = new HashMap<String, Integer>();
         name = "";
-        stats.put(Constants.varHeroEnergy, 10);
+        stats.put(Constants.varHeroEnergy, 1);
         stats.put(Constants.varHeroFavour, 3); // No idea for ranges yet
         stats.put(Constants.varHeroStrength, 10);
     }
