@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TestOne</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="lblProductCatalog">Product Catalog</string>
+    <string name="lblRecent">Recent products:</string>
+    <string name="lblAddNew">Add new product</string>
+    <string name="lblShowAll">Show all products</string>
+    <string name="title_activity_add_product">AddProduct</string>
+    <string name="lblProductName">Product Name</string>
+    <string name="lblProductPrice">Product Price</string>
+    <string name="lblProductDescription">Product Description</string>
+    <string name="lblAdd">Add</string>
+    <string name="title_activity_all_products">AllProducts</string>
+    <string name="lblSearch">Search</string>
+    <string name="lblSearchFor">Search for</string>
+    <string name="lblCancel">Cancel</string>
+
+</resources>
