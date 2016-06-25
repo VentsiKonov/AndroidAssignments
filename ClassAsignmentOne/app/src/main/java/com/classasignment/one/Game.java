@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -13,15 +11,15 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-
 public class Game extends Activity {
-    int[] matrix;
-    int size;
-    TileAdapter adapter;
-    GridView grid;
-    TextView hit_count;
-    static Random rand = new Random();
+    private int[] matrix;
+    private int size;
+    private TileAdapter adapter;
+    private GridView grid;
+    private TextView hit_count;
+    private static Random rand = new Random();
 
+    @org.jetbrains.annotations.Contract(pure = true)
     private boolean checkWin(){
         for (int i = 1; i < matrix.length; i++){
             if(matrix[0] != matrix[i])
@@ -81,10 +79,7 @@ public class Game extends Activity {
         adapter = new TileAdapter(this, matrix);
         grid.setAdapter(adapter);
 
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        grid.setOnItemClickListener((parent, view, position, id) -> {
                 flip(position);
                 flipNeighbours(position);
                 adapter.notifyDataSetChanged();
@@ -94,16 +89,10 @@ public class Game extends Activity {
                     Toast toast = Toast.makeText(Game.this, "You win!", Toast.LENGTH_LONG);
                     toast.show();
                 }
-            }
         });
 
         Button reset = (Button) findViewById(R.id.reset);
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                reset();
-            }
-        });
+        reset.setOnClickListener(v -> reset());
 
     }
 
@@ -121,7 +110,6 @@ public class Game extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.size_5:
                 size = 5;
